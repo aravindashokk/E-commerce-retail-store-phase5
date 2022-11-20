@@ -24,10 +24,10 @@ function About() {
                     Mercado Escolar/ Marketplace is a start up Online Shopping Management Company with two branches one in Arlington, Texas and one in Irving, Texas.
                     We are planning to expand our business to other cities in the Texas.
                         <p>
-                            The Main Philosophy of Mercado Escolar is to provide quality service to our customers. At Insta Wash we provide various services to our customers which will help them to do laundry at the comfort of their home. Look into our service page for more information regarding the service provided at Insta Wash.
+                            The Main Philosophy of Mercado Escolar is to provide quality service to our students. At Insta Wash we provide various services to our students which will help them to do laundry at the comfort of their home. Look into our service page for more information regarding the service provided at Insta Wash.
                         </p>
                         <p>
-                        The Main Philosophy of Mercado Escolar is to provide quality service to our customers. At Mercado Escolar we provide various services to our customers which will help them buy or sell products with one click. Look into our services page for more information regarding the services we provide.
+                        The Main Philosophy of Mercado Escolar is to provide quality service to our students. At Mercado Escolar we provide various services to our students which will help them buy or sell products with one click. Look into our services page for more information regarding the services we provide.
                         </p>
                         <b>Our Motto at Mercado Escolar : No task is too difficult, no request is too demanding. We rise to the challenge, day by day and year after year. </b>
                     </p>

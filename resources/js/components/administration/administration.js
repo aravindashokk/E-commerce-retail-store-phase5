@@ -18,7 +18,7 @@ export function populateTables() {
 
 
     // fetch customer list
-            customer = require('../assets/staticData/ManageCustomers.json')
+            customer = require('../assets/staticData/Managestudents.json')
             populateCustomerList(customer['ManageCustomer']);
 
 
@@ -110,10 +110,10 @@ function populateproductsList(products) {
 }
 
 // populate customer table
-function populateCustomerList(customers) {
+function populateCustomerList(students) {
     let customerTable = document.getElementById('customer-table')?.childNodes[0];
     if(customerTable) {
-    customers.forEach(element => {
+    students.forEach(element => {
         customerTable.innerHTML += `<tr id="${`employee_` + element.id}">
                 <td>${element.id}</td>
                 <td>${element.name}</td>

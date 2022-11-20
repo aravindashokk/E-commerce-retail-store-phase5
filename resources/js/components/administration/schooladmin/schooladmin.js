@@ -14,13 +14,13 @@ import Chart from "chart.js/auto";
 function SchoolAdmin() {
     const [clubs, setClub] = useState([]);
     const [posts, setPost] = useState([]);
-    const [customers, setCustomers] = useState([]);
+    const [students, setstudents] = useState([]);
     const [businesss, setBusiness] = useState([]);
     useEffect(() => {
         validateSession('SchoolAdmin');
         document.getElementsByClassName('nav-item active')[0].classList.remove('active');
         document.getElementById('authenticationTab').classList.add('active');
-    //    getAllCustomers();
+    //    getAllstudents();
     updateCustomerTable();
     updateBusinessTable();
     updatePostsTable();
@@ -31,17 +31,17 @@ function SchoolAdmin() {
     function deleteCustomer(elementId) {
         axios({
             method: 'post',
-            url: 'http://localhost/wdm_phase4/React/src/api' + '/customers.php',
+            url: 'http://localhost/wdm_phase4/React/src/api' + '/students.php',
             headers: {
                 'content-type': 'application/json'
             },
             data: { Function: 'deleteCustomer', Data: { ID: elementId } }
         }).then(result => {
             
-            customers.splice(customers.findIndex(customer => customer.ID === elementId), 1)
+            students.splice(students.findIndex(customer => customer.ID === elementId), 1)
             
-            setCustomers(customers);
-            console.log(customers)
+            setstudents(students);
+            console.log(students)
             updateCustomerTable();
         }).catch(error => {
         });
@@ -107,14 +107,14 @@ function SchoolAdmin() {
     function updateCustomerTable() {
         axios({
             method: 'post',
-            url: 'http://localhost/wdm_phase4/React/src/api' + '/customers.php',
+            url: 'http://localhost/wdm_phase4/React/src/api' + '/students.php',
             headers: {
                 'content-type': 'application/json'
             },
-            data: { Function: 'getAllCustomers',Data:{} }
+            data: { Function: 'getAllstudents',Data:{} }
         }).then(result => {
             console.log(result.data);
-            setCustomers(result.data);
+            setstudents(result.data);
             
         }).catch(error => {
         });
@@ -169,15 +169,15 @@ function SchoolAdmin() {
     }
 
     function editCustomerColumn(customer) {
-        customers.map(customer => {
+        students.map(customer => {
             if (customer.addcustomer) {
                 customer.addcustomer = false;
             }
         });
         customer.editcustomer = true;
-        let index = customers.findIndex(cus => cus.ID === customer.ID);
-        customers[index] = customer;
-        setCustomers([...customers]);
+        let index = students.findIndex(cus => cus.ID === customer.ID);
+        students[index] = customer;
+        setstudents([...students]);
     }
 
     function editBusinessColumn(business) {
@@ -217,11 +217,11 @@ function SchoolAdmin() {
     }
 
     function addCustomerColumn() {
-        if (customers.find(customer => customer.addcustomer)) {
+        if (students.find(customer => customer.addcustomer)) {
             return;
         }
         let customer = {
-            ID: (100 || (Number(customers[customers.length - 1].ID) + 1)).toString(),
+            ID: (100 || (Number(students[students.length - 1].ID) + 1)).toString(),
             First_Name: '',
             Last_Name: '',
             Email: '',
@@ -230,8 +230,8 @@ function SchoolAdmin() {
             addcustomer: true,
             
         }
-        customers.push(customer);
-        setCustomers([...customers]);
+        students.push(customer);
+        setstudents([...students]);
     }
 
     function addBusinessColumn() {
@@ -288,7 +288,7 @@ function SchoolAdmin() {
     function addOrEditCustomer(customer) {
         axios({
             method: 'post',
-            url: 'http://localhost/wdm_phase4/React/src/api' + '/customers.php',
+            url: 'http://localhost/wdm_phase4/React/src/api' + '/students.php',
             headers: {
                 'content-type': 'application/json'
             },
@@ -296,7 +296,7 @@ function SchoolAdmin() {
         }).then(result => {
             customer.editcustomer = false;
             customer.addcustomer = false;
-            setCustomers(customers);
+            setstudents(students);
             updateCustomerTable();
         }).catch(error => {
         });
@@ -355,12 +355,12 @@ function SchoolAdmin() {
 
     function handleCusChange(event, customer) {
         const { name, value } = event.target;
-        customers.forEach((cus) => {
+        students.forEach((cus) => {
             if (cus.ID === customer.ID) {
                 cus[name] = value;
             }
         });
-        setCustomers([...customers]);
+        setstudents([...students]);
     }
 
     function handleBusChange(event, customer) {
@@ -449,7 +449,7 @@ function SchoolAdmin() {
                                             width="13px" alt='add records' /></th>
                                     </tr>
 
-                                    {customers.map(customer => {
+                                    {students.map(customer => {
                                         if ((customer.editcustomer || customer.addcustomer))
                                         return (<tr>
                                             <td><input type="text" id="First_Name" name="First_Name" className="font-roboto" placeholder="First Name" value={customer.First_Name} onChange={(event) => handleCusChange(event, customer)}  /></td>
@@ -653,7 +653,7 @@ function SchoolAdmin() {
                     <span className="font-oswald section-header">Report </span>
                     <Doughnut data={data} />
 
-                    {/* Manage Customers table  */}
+                    {/* Manage students table  */}
                     
 
                     {/* Manage Pickup/Delivery table  */}

@@ -13,7 +13,7 @@ if(isset($requestdata)){
 }
 
 
-function getAllCustomers($data){
+function getAllstudents($data){
      $sql = "SELECT * FROM Customer WHERE User_Type='Student'";
      $result = mysqli_query($data[0], $sql);
      if($result){

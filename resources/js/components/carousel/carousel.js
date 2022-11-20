@@ -40,7 +40,7 @@ function showSlides(n) {
         <div className="carousel d-flex align-items-center justify-around">
           <span>
             <p className="text-header font-damion offer-info">Flat 20% off</p> <span className="font-oswald"> first time
-              customers only. Terms and Condtions apply.</span>
+              students only. Terms and Condtions apply.</span>
           </span>
           <img src={specialOffer} alt='special-offer' height="280px" width="280px"/>
         </div>

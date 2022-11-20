@@ -5,7 +5,7 @@ header("Access-Control-Allow-Headers: access");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, X-Requested-With");
 header("Content-Type: application/json; charset=UTF-8");
-include './customers.php';
+include './students.php';
 
 
 $sql= "SELECT  First_Name,Last_Name,Email,Phone,User_Type from customer where User_Type='Student'";
