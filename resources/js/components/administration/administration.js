@@ -1,4 +1,4 @@
-var students, orders, equipment, pickupdelivery, customer, tasks, employees, managers;
+var students, orders, products, pickupdelivery, customer, tasks, employees, managers;
 export function populateTables() {
 
      
@@ -7,9 +7,9 @@ export function populateTables() {
             orders = require('../assets/staticData/ManageOrder.json');
             populateOrderList(orders['Manage Orders'])
 
-    // fetch equipments list
-            equipment =  require('../assets/staticData/ManageEqupment.json');
-            populateEquipmentList(equipment['ManageEquipment'])
+    // fetch productss list
+            products =  require('../assets/staticData/ManageEqupment.json');
+            populateproductsList(products['Manageproducts'])
 
 
     // fetch pickup/delivery list
@@ -93,18 +93,18 @@ function populateManagerList(managers) {
     }); }
 }
 
-// populate equipment table
-function populateEquipmentList(equipment) {
-    var equipmentTable = document.getElementById('equipment-table')?.childNodes[0];
-    if(equipmentTable) {
-    equipment.forEach(element => {
-        equipmentTable.innerHTML += `<tr id="${`equipment_` + element.No}">
+// populate products table
+function populateproductsList(products) {
+    var productsTable = document.getElementById('products-table')?.childNodes[0];
+    if(productsTable) {
+    products.forEach(element => {
+        productsTable.innerHTML += `<tr id="${`products_` + element.No}">
                 <td>${element.No}</td>
-                <td>${element.EquipmentName}</td>
+                <td>${element.productsName}</td>
                 <td>${element.Status}</td>
                 <td>${element.OrderNo}</td>
                 <td>${element.CustomerName}</td>
-                <td><span class="action-icons"><img src="../assets/images/edit.png" onclick="editEquipment(${`equipment_` + element.No}) title="edit"> <img src="../assets/images/delete.png" onclick="deleteRecord(equipment_${element.No})" title="delete"></span></td>
+                <td><span class="action-icons"><img src="../assets/images/edit.png" onclick="editproducts(${`products_` + element.No}) title="edit"> <img src="../assets/images/delete.png" onclick="deleteRecord(products_${element.No})" title="delete"></span></td>
             </tr>`;
     });}
 }
@@ -121,7 +121,7 @@ function populateCustomerList(customers) {
                 <td>${element.email}</td>
                 <td>${element.PhoneNo}</td>
                 <td>${element.Gender}</td>
-                <td><span class="action-icons"><img src="../assets/images/edit.png" onclick="editEquipment(${`customer_` + element.id}) title="edit"> <img src="../assets/images/delete.png" onclick="deleteRecord(customer_${element.id})" title="delete"></span></td>
+                <td><span class="action-icons"><img src="../assets/images/edit.png" onclick="editproducts(${`customer_` + element.id}) title="edit"> <img src="../assets/images/delete.png" onclick="deleteRecord(customer_${element.id})" title="delete"></span></td>
             </tr>`;
     });
  }
@@ -140,7 +140,7 @@ function populatePickupDeliveryList(pickupdeliveries) {
                 <td>${element.PhoneNo}</td>
                 <td>${element.AssignedTo}</td>
                 <td>${element.ServiceType}</td>
-                <td><span class="action-icons"><img src="../assets/images/edit.png" onclick="editEquipment(${`pickupdelivery_` + element.Sno}) title="edit"> <img src="../assets/images/delete.png" onclick="deleteRecord(pickupdelivery_${element.Sno})" title="delete"></span></td>
+                <td><span class="action-icons"><img src="../assets/images/edit.png" onclick="editproducts(${`pickupdelivery_` + element.Sno}) title="edit"> <img src="../assets/images/delete.png" onclick="deleteRecord(pickupdelivery_${element.Sno})" title="delete"></span></td>
             </tr>`;
     });
  }
@@ -157,7 +157,7 @@ function populateTaskList(tasks) {
                 <td>${element['Assigned To']}</td>
                 <td>${element.Desc}</td>
                 <td>${element.Services}</td>
-                <td><span class="action-icons"><img src="../assets/images/edit.png" onclick="editEquipment(${`tasks_` + element.Sno}) title="edit"> <img src="../assets/images/delete.png" onclick="deleteRecord(tasks_${element.Sno})" title="delete"></span></td>
+                <td><span class="action-icons"><img src="../assets/images/edit.png" onclick="editproducts(${`tasks_` + element.Sno}) title="edit"> <img src="../assets/images/delete.png" onclick="deleteRecord(tasks_${element.Sno})" title="delete"></span></td>
             </tr>`;
     });
  }
@@ -176,17 +176,17 @@ export function addOrder() {
         <td><span class="action-icons"><img src="../assets/images/tick.png" title="accept"> <img src="../assets/images/close.png" title="discard" onclick="discardRow(order_${number})"></span></td></tr>`;
 }
 
-//add new row to equipment table
-export function addEquipment() {
-    let number = Number(equipment['ManageEquipment'][equipment['ManageEquipment'].length - 1].No)
-    var equipmentTable = document.getElementById('equipment-table').childNodes[0];
-    equipmentTable.innerHTML += `<tr id="equipment_${number + 1}">
+//add new row to products table
+export function addproducts() {
+    let number = Number(products['Manageproducts'][products['Manageproducts'].length - 1].No)
+    var productsTable = document.getElementById('products-table').childNodes[0];
+    productsTable.innerHTML += `<tr id="products_${number + 1}">
                 <td>${number + 1}</td>
-                <td><input type="text" placeholder="Equipment Name"></td>
+                <td><input type="text" placeholder="products Name"></td>
                 <td><input type="text" placeholder="Status"></td>
                 <td><input type="text" placeholder="Order No"></td>
                 <td><input type="text" placeholder="Customer Name"></td>
-                <td><span class="action-icons"><img src="../assets/images/tick.png" title="accept"> <img src="../assets/images/close.png" title="discard" onclick="discardRow(equipment_${number + 1})"></span></td>
+                <td><span class="action-icons"><img src="../assets/images/tick.png" title="accept"> <img src="../assets/images/close.png" title="discard" onclick="discardRow(products_${number + 1})"></span></td>
             </tr>`;
 }
 

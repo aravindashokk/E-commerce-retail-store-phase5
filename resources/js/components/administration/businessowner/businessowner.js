@@ -7,7 +7,7 @@ import { addDeliveries } from '../administration';
 import { addEmployee } from '../administration';
 import { addOrder } from '../administration';
 import { addTasks } from '../administration';
-import { addEquipment } from '../administration';
+import { addproducts } from '../administration';
 import { populateTables } from "../administration";
 import validateSession from "../../session/session";
 function BusinessOwner () {
