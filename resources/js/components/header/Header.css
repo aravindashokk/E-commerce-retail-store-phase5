@@ -1,0 +1,75 @@
+#snackbar {
+    visibility: hidden; 
+    min-width: 250px; 
+    margin-left: -125px;
+    background-color: rgb(154, 211, 122);
+    color: rgb(37, 37, 37); 
+    text-align: center;
+    border-radius: 5px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+  }
+  #snackbar.danger{
+    background-color: rgb(214, 103, 103);
+    color: white;
+  }
+  #snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+#tray {
+    height:40px;
+    width:40px;
+    background-color:rgb(0, 140, 255);
+    display:block;
+    border-radius:50%;
+    text-align:center;
+    cursor:pointer;
+    transition-duration:0.5s;
+    left: 25px;
+    bottom: 25px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    
+    #tray:hover {
+    box-shadow: 0 0 10px rgb(141, 141, 141);
+    }
+    
+    #tray i {
+    color: orange;
+    margin-top: 8px;
+    font-size: 20px;
+    }
+    .count {
+    position: absolute;
+    background-color: rgb(248, 141, 0);
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    padding: 2px;
+    color: rgb(20, 19, 19);
+    font-weight: 300;
+    display:none;
+    }
+
+    .logout-tab{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      cursor: pointer;
+      padding-bottom: 5px;
+    }
+  
+    .logout-tab p {
+      color: var(--primary-label-1);
+    }
+  
+    .logout-tab img{
+      padding-left: 10px;
+    }
