@@ -6,7 +6,7 @@ import businessGraph from '../../assets/images/business-graph.svg';
 import stackedArea from '../../assets/images/700px-7.1_stacked_area_chart.png';
 import { addCustomer } from '../administration';
 import { addDeliveries } from '../administration';
-import { addEquipment } from '../administration';
+import { addproducts } from '../administration';
 import { addOrder } from '../administration';
 import { addManager } from '../administration';
 import { populateTables } from "../administration";
@@ -122,7 +122,7 @@ function SuperAdmin () {
                 <div className="d-flex flex-direction-column align-items-start section-content"><span
                         className="font-oswald section-header">Manage Schools</span>
                     <div className="table-container">
-                        <table id="equipment-table" className="material-table">
+                        <table id="products-table" className="material-table">
                         <tbody>
                             <tr>
                                 <th>School ID</th>
@@ -131,7 +131,7 @@ function SuperAdmin () {
                                 <th>Phone No</th>
                                 <th>Email</th>
                                 <th className="text-align-center"><img className="cursor-pointer" title="Add Record"
-                                        onClick={addEquipment} src={add} height="13px"
+                                        onClick={addproducts} src={add} height="13px"
                                         width="13px" alt='add-record'/></th>
                             </tr>
                             </tbody>
